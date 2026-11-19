@@ -18,5 +18,7 @@
 | 下排 | `Z X C V B N M , . /` | `S D G H J L ;` | C3 – E4 |
 | 上排 | `Q W E R T Y U I O P [ ]` | `2 3 5 6 7 9 0 =` | C4 – G5 |
 
+按 `Enter` 開始遊戲、`Esc` 停止。
+
 ## 本機執行
 直接用瀏覽器開啟 `index.html` 即可，不需安裝任何套件。

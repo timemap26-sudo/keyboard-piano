@@ -370,6 +370,14 @@
     if (e.code === 'ArrowLeft') { e.preventDefault(); if (!game.running) setOctave(octave - 1); return; }
     if (e.code === 'ArrowRight') { e.preventDefault(); if (!game.running) setOctave(octave + 1); return; }
     if (e.code === 'Escape') { if (game.running) stopGame(false); return; }
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      e.preventDefault();
+      if (e.repeat) return;
+      const result = $('result');
+      if (!result.hidden) { result.hidden = true; $('resultClose').blur(); return; }
+      if (!game.running) startGame();
+      return;
+    }
     const base = CODE_TO_MIDI[e.code];
     if (base == null) return;
     e.preventDefault();
@@ -549,7 +557,7 @@
       notes: parseSong(song).map((n) => ({ midi: n.midi, t: n.beat * spb, dur: n.beats * spb, done: false })),
     });
     game.end = Math.max(...game.notes.map((n) => n.t + n.dur)) + 1.2;
-    startBtn.textContent = '■ 停止';
+    startBtn.innerHTML = '■ 停止 <kbd>Esc</kbd>';
     [songEl, modeEl, speedEl].forEach((el) => (el.disabled = true));
     updateHud();
   }
@@ -558,7 +566,7 @@
     game.running = false;
     allNotesOff();
     keyEls.forEach((el) => el.classList.remove('target'));
-    startBtn.textContent = '▶ 開始';
+    startBtn.innerHTML = '▶ 開始 <kbd>Enter</kbd>';
     [songEl, modeEl, speedEl].forEach((el) => (el.disabled = false));
     if (finished && game.mode !== 'auto') showResult();
   }
