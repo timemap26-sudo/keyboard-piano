@@ -40,17 +40,20 @@
   const SONGS = [
     {
       name: '小星星', bpm: 100,
+      chords: `C:4 F:2 C:2 F:2 C:2 G:2 C:2  C:2 F:2 C:2 G:2 C:2 F:2 C:2 G:2  C:4 F:2 C:2 F:2 C:2 G:2 C:2`,
       score: `C4 C4 G4 G4 A4 A4 G4:2 F4 F4 E4 E4 D4 D4 C4:2
               G4 G4 F4 F4 E4 E4 D4:2 G4 G4 F4 F4 E4 E4 D4:2
               C4 C4 G4 G4 A4 A4 G4:2 F4 F4 E4 E4 D4 D4 C4:2`,
     },
     {
       name: '瑪莉有隻小綿羊', bpm: 110,
+      chords: `C:8 G:4 C:4 C:8 G:4 C:4`,
       score: `E4 D4 C4 D4 E4 E4 E4:2 D4 D4 D4:2 E4 G4 G4:2
               E4 D4 C4 D4 E4 E4 E4 E4 D4 D4 E4 D4 C4:4`,
     },
     {
       name: '歡樂頌', bpm: 110,
+      chords: `C:4 G:4 C:4 G:4  C:4 G:4 C:4 G:2 C:2  G:2 C:2 G:2 C:2 G:4 D:2 G:2  C:4 G:4 C:4 G:2 C:2`,
       score: `E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 E4:1.5 D4:0.5 D4:2
               E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 D4:1.5 C4:0.5 C4:2
               D4 D4 E4 C4 D4 E4:0.5 F4:0.5 E4 C4 D4 E4:0.5 F4:0.5 E4 D4 C4 D4 G3:2
@@ -58,11 +61,13 @@
     },
     {
       name: '生日快樂', bpm: 100,
+      chords: `R:1 C:3 G:3 G:3 C:3 C:3 F:3 F:1 C:2 G:1 C:3`,
       score: `G4:0.75 G4:0.25 A4 G4 C5 B4:2 G4:0.75 G4:0.25 A4 G4 D5 C5:2
               G4:0.75 G4:0.25 G5 E5 C5 B4 A4:2 F5:0.75 F5:0.25 E5 C5 D5 C5:3`,
     },
     {
       name: '給愛麗絲（開頭）', bpm: 120,
+      chords: `R:4 Am:3 E:3 Am:2 R:4 Am:3 E:3 Am:2`,
       score: `E5:.5 D#5:.5 E5:.5 D#5:.5 E5:.5 B4:.5 D5:.5 C5:.5 A4:1 R:.5
               C4:.5 E4:.5 A4:.5 B4:1 R:.5 E4:.5 G#4:.5 B4:.5 C5:1 R:.5
               E4:.5 E5:.5 D#5:.5 E5:.5 D#5:.5 E5:.5 B4:.5 D5:.5 C5:.5 A4:1 R:.5
@@ -70,6 +75,7 @@
     },
     {
       name: '小蜜蜂', bpm: 120,
+      chords: `C:4 G:4 C:4 C:4  C:4 G:4 C:4 C:4  G:8 C:8  C:4 G:4 C:4 C:4`,
       score: `G4 E4 E4:2 F4 D4 D4:2 C4 D4 E4 F4 G4 G4 G4:2
               G4 E4 E4:2 F4 D4 D4:2 C4 E4 G4 G4 E4:4
               D4 D4 D4 D4 D4 E4 F4:2 E4 E4 E4 E4 E4 F4 G4:2
@@ -79,6 +85,12 @@
       // 原曲：林坤信《仙劍奇俠傳》；依使用者提供的樂譜（採譜：蘇多多）只取主旋律，
       // 整體移低小三度以符合琴鍵音域。
       name: '蝶戀（仙劍奇俠傳）', bpm: 120,
+      chords: `Dm:4 F/C:4 Bb:2 F/C:2 Gm/D:4  Dm:4 F/C:4 Eb/Bb:2 F/C:2 Dm:4
+              Dm:4 F/C:4 Bb:2 F/C:2 Dm:4  Cm:4 Bb:4 F/C:4 Dm:4
+              Dm:4 F/C:4 Bb:2 F/C:2 Dm:4  Cm:4 Bb:4 F/C:4 Bb/F:2 Gm:2
+              Bm:4 D/A:4 G:2 D/F#:2 Em/B:4  Bm:4 D/A:4 C/G:2 D/A:2 Bm:4
+              Em:4 Bm:4 Am:2 Bm:2 Bm:4  Am:4 Em:4 Em:2 D:2 G:4
+              Em:4 Bm:4 Em:2 D:2 Bm:4  Am:4 Em:4 Em:2 D:2 G:4`,
       score: `D4:.5 D4:.5 D4:.5 C4:.5 D4:2  C4:.5 D4:.5 C4:.5 C4:.5 G3 G3:.5 A3:.5
               A#3 C4:.5 A#3:.5 A3 G3:.5 F3:.5  G3:2 R:1.5 G3:.5
               D4:.5 D4:.5 D4:.5 C4:.5 D4:1.5 G4:.5  F4:.5 G4:.5 F4:.5 F4:.5 C4 C4:.5 D4:.5
@@ -106,6 +118,13 @@
     },
     {
       name: '卡農（帕海貝爾）', bpm: 80,
+      chords: `D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:1 A:1 Bm:1 F#m:1 G:1 D:1 G:1 A:1
+              D:4`,
       score: `F#5 E5 D5 C#5 B4 A4 B4 C#5
               D5 C#5 B4 A4 G4 F#4 G4 E4
               D4:.5 F#4:.5 A4:.5 G4:.5 F#4:.5 D4:.5 F#4:.5 E4:.5
@@ -125,6 +144,34 @@
       const [n, b] = tok.split(':');
       const beats = b ? parseFloat(b) : 1;
       if (n !== 'R') out.push({ midi: noteToMidi(n), beat, beats });
+      beat += beats;
+    }
+    return out;
+  }
+
+  // Optional `chords`: "CHORD:beats" (e.g. C, Am, F#m, G7, F/C; R = none). When the
+  // accompaniment toggle is on, the game plays the bass on each chord and the chord
+  // on every beat underneath the melody.
+  const CHORD_TYPES = { '': [0, 4, 7], m: [0, 3, 7], 7: [0, 4, 7, 10], m7: [0, 3, 7, 10], maj7: [0, 4, 7, 11], dim: [0, 3, 6], sus4: [0, 5, 7] };
+  const pitchClass = (s) => noteToMidi(s + '4') % 12;
+  function parseChords(song) {
+    const out = [];
+    let beat = 0;
+    for (const tok of (song.chords || '').trim().split(/\s+/).filter(Boolean)) {
+      const [sym, b] = tok.split(':');
+      const beats = b ? parseFloat(b) : 1;
+      if (sym !== 'R') {
+        const r = /^([A-G][#b]?)(maj7|m7|m|7|dim|sus4)?(?:\/([A-G][#b]?))?$/.exec(sym);
+        if (!r) throw new Error('bad chord ' + tok);
+        const root = pitchClass(r[1]);
+        const bassPc = r[3] ? pitchClass(r[3]) : root;
+        const bass = 36 + bassPc;                         // C2..B2
+        const tones = CHORD_TYPES[r[2] || ''].map((iv) => 48 + ((root + iv) % 12)); // C3..B3
+        out.push({ beat, beats, midis: [bass], velocity: 0.42 });
+        for (let i = 0; i < beats - 1e-9; i++) {
+          out.push({ beat: beat + i, beats: Math.min(1, beats - i), midis: tones, velocity: i ? 0.16 : 0.22 });
+        }
+      }
       beat += beats;
     }
     return out;
@@ -305,6 +352,7 @@
   const $ = (id) => document.getElementById(id);
   const keysEl = $('keys'), canvas = $('fall'), cctx = canvas.getContext('2d');
   const volumeEl = $('volume'), sustainBtn = $('sustainBtn'), reverbBtn = $('reverbBtn');
+  const accompBtn = $('accompBtn');
   const octaveEl = $('octave'), labelsEl = $('labels');
   const keyEls = new Map(); // displayed midi -> element
   let octave = 0;
@@ -470,6 +518,17 @@
     setSustain(!sustain);
     sustainBtn.blur();
   });
+  let accompOn = true;
+  try { accompOn = localStorage.getItem('accomp') !== 'off'; } catch (e) { /* storage unavailable */ }
+  accompBtn.classList.toggle('on', accompOn);
+  accompBtn.addEventListener('click', () => {
+    accompOn = !accompOn;
+    accompBtn.classList.toggle('on', accompOn);
+    accompBtn.blur();
+    try { localStorage.setItem('accomp', accompOn ? 'on' : 'off'); } catch (e) { /* storage unavailable */ }
+    if (!accompOn) releaseAccomp();
+  });
+
   reverbBtn.addEventListener('click', () => {
     reverbOn = !reverbOn;
     reverbBtn.classList.toggle('on', reverbOn);
@@ -567,6 +626,7 @@
       running: true, mode: modeEl.value, time: -LEAD_IN,
       score: 0, combo: 0, maxCombo: 0, perfect: 0, good: 0, miss: 0, effects: [],
       notes: parseSong(song).map((n) => ({ midi: n.midi, t: n.beat * spb, dur: n.beats * spb, done: false })),
+      accomp: parseChords(song).map((c) => ({ ...c, t: c.beat * spb, dur: c.beats * spb, done: false })),
     });
     game.end = Math.max(...game.notes.map((n) => n.t + n.dur)) + 1.2;
     startBtn.innerHTML = '■ 停止 <kbd>Esc</kbd>';
@@ -577,6 +637,7 @@
   function stopGame(finished) {
     game.running = false;
     allNotesOff();
+    releaseAccomp();
     keyEls.forEach((el) => el.classList.remove('target'));
     startBtn.innerHTML = '▶ 開始 <kbd>Enter</kbd>';
     [songEl, modeEl, speedEl].forEach((el) => (el.disabled = false));
@@ -658,6 +719,24 @@
   $('resultClose').addEventListener('click', () => { $('result').hidden = true; $('resultClose').blur(); });
 
   const autoReleases = [];
+  let accompVoices = []; // { voice, at }
+  function releaseAccomp() {
+    accompVoices.forEach((a) => a.voice.release());
+    accompVoices = [];
+  }
+  function updateAccomp() {
+    for (const c of game.accomp) {
+      if (c.done || game.time < c.t) continue;
+      c.done = true;
+      if (!accompOn || game.time > c.t + 0.25) continue; // skip stale events
+      for (const m of c.midis) accompVoices.push({ voice: makeVoice(m, c.velocity), at: c.t + c.dur * 0.95 });
+    }
+    accompVoices = accompVoices.filter((a) => {
+      if (game.time < a.at) return true;
+      a.voice.release();
+      return false;
+    });
+  }
   function updateGame(dt) {
     if (game.mode === 'wait') {
       const next = nextPending();
@@ -677,6 +756,7 @@
         judge(n, 'miss');
       }
     }
+    updateAccomp();
     for (let i = autoReleases.length - 1; i >= 0; i--) {
       if (game.time >= autoReleases[i].at) { noteOff(autoReleases[i].midi, { record: false }); autoReleases.splice(i, 1); }
     }
