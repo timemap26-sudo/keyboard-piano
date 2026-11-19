@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鍵盤鋼琴 Keyboard Piano</title>
+  <meta name="description" content="用電腦鍵盤彈鋼琴：多種音色、延音踏板、錄音播放，以及落下音符的練習遊戲。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎹</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>🎹 鍵盤鋼琴 <span>Keyboard Piano</span></h1>
+    <p class="sub">用電腦鍵盤彈奏，或挑一首歌來挑戰落下的音符！</p>
+  </header>
+
+  <main>
+    <section class="panel controls" aria-label="音色設定">
+      <label class="field">樂器
+        <select id="instrument">
+          <option value="piano">平台鋼琴</option>
+          <option value="epiano">電鋼琴</option>
+          <option value="organ">管風琴</option>
+          <option value="chip">8-bit 電子</option>
+        </select>
+      </label>
+      <label class="field">音量
+        <input id="volume" type="range" min="0" max="100" value="70">
+      </label>
+      <div class="field">八度
+        <div class="stepper">
+          <button id="octDown" title="降八度 (←)">−</button>
+          <output id="octave">0</output>
+          <button id="octUp" title="升八度 (→)">＋</button>
+        </div>
+      </div>
+      <button id="sustainBtn" class="toggle" title="按住空白鍵也可延音">延音 <kbd>Space</kbd></button>
+      <button id="reverbBtn" class="toggle on">殘響</button>
+      <label class="field">標籤
+        <select id="labels">
+          <option value="key">電腦按鍵</option>
+          <option value="note">音名 (C D E)</option>
+          <option value="solfege">唱名 (Do Re Mi)</option>
+          <option value="none">不顯示</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="panel game" aria-label="遊戲">
+      <label class="field">歌曲
+        <select id="song"></select>
+      </label>
+      <label class="field">模式
+        <select id="mode">
+          <option value="play">演奏挑戰</option>
+          <option value="wait">練習（等你按）</option>
+          <option value="auto">自動示範</option>
+        </select>
+      </label>
+      <label class="field">速度
+        <select id="speed">
+          <option value="0.5">50%</option>
+          <option value="0.75">75%</option>
+          <option value="1" selected>100%</option>
+          <option value="1.25">125%</option>
+        </select>
+      </label>
+      <button id="startBtn" class="primary">▶ 開始</button>
+      <div class="score" aria-live="polite">
+        <div><small>分數</small><b id="score">0</b></div>
+        <div><small>連擊</small><b id="combo">0</b></div>
+        <div><small>進度</small><b id="progress">–</b></div>
+      </div>
+      <div class="rec">
+        <button id="recBtn" title="錄下你的演奏">● 錄音</button>
+        <button id="playBtn" disabled>▶ 播放</button>
+        <button id="clearBtn" disabled>清除</button>
+      </div>
+    </section>
+
+    <section class="stage" aria-label="鋼琴">
+      <div class="scroller" id="scroller">
+        <div class="instrument" id="instrumentBox">
+          <canvas id="fall"></canvas>
+          <div id="judge" class="judge"></div>
+          <div class="keys" id="keys"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel help">
+      <h2>按鍵對照</h2>
+      <ul>
+        <li><b>下排</b> <kbd>Z</kbd>~<kbd>/</kbd> 白鍵、<kbd>S D G H J L ;</kbd> 黑鍵：C3 – E4</li>
+        <li><b>上排</b> <kbd>Q</kbd>~<kbd>]</kbd> 白鍵、<kbd>2 3 5 6 7 9 0 =</kbd> 黑鍵：C4 – G5</li>
+        <li><kbd>Space</kbd> 延音踏板、<kbd>←</kbd>/<kbd>→</kbd> 切換八度、<kbd>Esc</kbd> 停止遊戲</li>
+        <li>也可以用滑鼠或觸控直接點琴鍵。遊戲會自動把八度歸零，音符落到琴鍵上緣時按下！</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="result" class="result" hidden>
+    <div class="card">
+      <h2 id="resultTitle">完成！</h2>
+      <p class="grade" id="grade">A</p>
+      <ul id="resultStats"></ul>
+      <button id="resultClose" class="primary">好</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
